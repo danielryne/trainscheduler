@@ -81,7 +81,7 @@ database.ref().on("child_added", function(childSnapshot, prevChildKey) {
   var minsaway = timepassed - ((Math.floor(timepassed/frequency))*frequency);
 
   //calcluate arrive time of next train
-  var nextarrival = moment(rightnow, "HHmm").add(minsaway).minutes(); 
+  var nextarrival = moment(rightnow).add(minsaway, 'minutes').format('LT');
 
   // Add each train's data into the table
   $('tbody').append("<tr><td>" + trainname + "</td><td>" + destination + "</td><td>" +
